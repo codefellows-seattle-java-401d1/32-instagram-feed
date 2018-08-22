@@ -6,6 +6,10 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.koushikdutta.ion.Ion;
 
 import java.util.List;
 
@@ -18,14 +22,6 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public View mView;
-
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mView = itemView;
-        }
-    }
 
     @NonNull
     @Override
@@ -45,6 +41,29 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
     @Override
     public int getItemCount() {
         return mPosts.size();
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        public View mView;
+        public ImageView image;
+        public TextView author;
+        public TextView description;
+
+        private InstagramPost mPost;
+
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mView = itemView;
+        }
+
+        public void bind(InstagramPost post) {
+            mPost = post;
+            author.setText(post.author);
+            description.setText(post.description);
+
+            Ion.with(image).load(post.imageURL);
+        }
     }
 
 }

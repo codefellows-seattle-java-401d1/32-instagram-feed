@@ -1,47 +1,28 @@
-# ![CF](http://i.imgur.com/7v5ASc8.png) Instagram-Like Image List
+#PhotoApp
 
-## Resources  
-* [Ion Image Library](https://github.com/koush/ion)
-* [Imgur Free Image Hosting](https://imgur.com/)
+##Overview
+This application is to work on using ButterKnife and Ion libraries to learn more about apps, passing/using Intent, layout and design of Android applications in Android Studio.
 
-Continue practicing building lists with the `RecyclerView` and a custom
-Adapter. Use the `Ion` image library to download images and display the images
-inside `ImageView` views in the ViewHolder.
+This app shows a list of images from  my cats' Instagram account, @apartment_cats
 
-Build an app that displays a list of images, as if they were uploaded from
-instagram.  Create a class with properties for the image url, and at least two
-addtional properties (like a username, a timestamp, or a description of the
-image).
+##Screenshots
 
-Create a hard-coded list of the images and their additional information and
-make it accessible to the adapter attached to the `RecyclerView`.
+**Internal Editor View**
 
-The images should be hosted externally somewhere online, and not dropped inside
-your Drawables folder.
+[Friend List View](/Users/sooz/codefellows/401Java/Labs/32-instagram-feed/screenshot/photoapp_listview1.png)
 
-### Example Ion interaction
-```java
-Ion.with(imageView)
-.placeholder(R.drawable.placeholder_image)
-.error(R.drawable.error_image)
-.load("http://example.com/image.png");
-```
+[Friend List View 2](/Users/sooz/codefellows/401Java/Labs/32-instagram-feed//screenshot/photoapp_listview2.png)
 
-### Gradle Dependencies
 
-```gradle
-dependencies {
-  implementation 'com.jakewharton:butterknife:8.8.1'
-  annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+**External View**
 
-  compile 'com.koushikdutta.ion:ion:2.+'
-}
-```
-  
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-susan`
-* Open a pull request to this repository
-* Submit on canvas a question and observation, how long you spent, and a link to
-  your pull request
+[Friend List View](shttps://github.com/FavoredFortune/32-instagram-feed//blob/master/screenshots/photoapp_listview1.png)
+
+[Friend Detail View 2](https://github.com/FavoredFortune/32-instagram-feed//blob/master/screenshots/photoapp_listview2.png)
+
+##Credits/Resources
+
+__Thanks to:__
+
+- Instructor Steve Geluso
+- TAs: Casey Cady

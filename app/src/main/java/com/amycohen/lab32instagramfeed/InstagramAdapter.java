@@ -55,6 +55,11 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
+
+            image = itemView.findViewById(R.id.image);
+            author = itemView.findViewById(R.id.author);
+            description = itemView.findViewById(R.id.description);
+
         }
 
         public void bind(InstagramPost post) {

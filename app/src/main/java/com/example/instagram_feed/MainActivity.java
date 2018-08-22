@@ -1,32 +1,33 @@
 package com.example.instagram_feed;
 
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.widget.Adapter;
+import android.widget.LinearLayout;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.image)
-    public ImageView mImage;
+    @BindView(R.id.recycler)
+    public RecyclerView mRecyclerView;
+    private LinearLayoutManager mLinearLayoutManager;
+    private Adapter mAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
+
+        mLinearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutmanager(mLinearLayoutManager);
+
+        mAdapter = new Adapter(InstagramPostData.animalProvider);
+        mRecyclerView.setAdapter(mAdapter);
     }
-
-    @OnClick(R.id.unsetVanilla)
-    public void unsetImageVanilla() {
-        Drawable drawable = getResources().getDrawable(R.drawable.loading)
-        mImage.setImageDrawable(drawable);
-    }
-
-
-
 }

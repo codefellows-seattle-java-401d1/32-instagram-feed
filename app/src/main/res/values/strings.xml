@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FauxStaGram</string>
+    <string name="unset_image">Unset Image</string>
+    <string name="unset_w_ion">Unset Ion</string>
+    <string name="load_image">Load Image</string>
+    <string name="faux">Fauxstagram</string>
+</resources>

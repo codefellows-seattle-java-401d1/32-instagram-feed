@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">instagram-feed</string>
+    <string name="unset_ion">Unset ion</string>
+    <string name="unset_vanilla_android">Unset Vanilla Android</string>
+    <string name="download_image">Download Image</string>
+</resources>

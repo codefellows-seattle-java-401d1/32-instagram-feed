@@ -67,7 +67,9 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
             author.setText(post.author);
             description.setText(post.description);
 
-            Ion.with(image).load(post.imageURL);
+            Ion.with(image)
+                    .error(R.drawable.error)
+                    .load(post.imageURL);
         }
     }
 

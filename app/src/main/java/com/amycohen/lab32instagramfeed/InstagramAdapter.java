@@ -21,8 +21,6 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
         mPosts = posts;
     }
 
-
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,7 +33,8 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        InstagramPost post = mPosts.get(position);
+        holder.bind(post);
     }
 
     @Override
@@ -43,6 +42,7 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.MyVi
         return mPosts.size();
     }
 
+    //This keeps track of one item in the list at a time
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public View mView;
         public ImageView image;

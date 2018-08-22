@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">InstagramFeed</string>
+    <string name="load_images">Load Images</string>
 </resources>

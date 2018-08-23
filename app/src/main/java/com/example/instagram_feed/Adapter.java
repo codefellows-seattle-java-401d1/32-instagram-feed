@@ -1,5 +1,6 @@
 package com.example.instagram_feed;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,22 +47,32 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         View mView;
-
         public ImageView mImage;
         public TextView mAuthor;
         private TextView mDescription;
 
         private InstagramPost mPost;
-    }
 
-    public MyViewHolder(View view) {
-        super(view);
-        mView = view;
+        public MyViewHolder(View view) {
+            super(view);
+            mView = view;
 
-        mImage = view.findViewById(R.id.pictures);
-        mAuthor = view.findViewById(R.id.author);
-        mDescription = view.findViewById(R.id.description);
+            mImage = view.findViewById(R.id.pictures);
+            mAuthor = view.findViewById(R.id.author);
+            mDescription = view.findViewById(R.id.description);
 
-        Ion.with(mImage).placeholder(R.drawable.loading).load(mPost.imageUrl);
+        }
+
+        public void bind(InstagramPost post) {
+            mPost = post;
+            mAuthor.setText(post.author);
+            mDescription.setText(post.description);
+
+            Ion.with(mImage)
+                    .placeholder(R.drawable.placeholder)
+                    .error(R.drawable.placeholder)
+                    .load(mPost.imageUrl);
+
+        }
     }
 }
